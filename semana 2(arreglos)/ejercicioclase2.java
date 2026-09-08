@@ -1,5 +1,5 @@
 
-public class ejercicioclase2 {
+public class Ejercicioclase2 {
     public static void main(String[] args) {
        
         //Declaración del Arreglo de la  Forma 1

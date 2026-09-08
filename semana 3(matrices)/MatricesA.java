@@ -15,7 +15,7 @@ public class MatricesA {
  String cad = "";
  for (int i = 0; i < m.length; i++) {
     for (int j = 0; j < m[0].length; j++) {  // m[0] hace referencia a las columnas
-        cad +=  "!" + m[i][j];
+        cad +=  "|" + m[i][j];
     }
     cad += "| \n";
  }
