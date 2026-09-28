@@ -8,9 +8,8 @@ public class Sala {
         this.nombre = nombre;
         this.sillas = new Silla[8][12];
         this.filas = new String[] { "A", "B", "C", "D", "E", "F", "G", "H" };
-        
-        // Se llenan las sillas al crear la sala para evitar nulls
-        this.llenarSillas(); 
+
+        this.llenarSillas();
     }
 
     public void llenarSillas() {
@@ -44,7 +43,7 @@ public class Sala {
 
         for (int i = 0; i < sillas.length; i++) {
             for (int j = 0; j < sillas[i].length; j++) {
-                // Validación de nulo ANTES de invocar getEtiqueta()
+
                 if (sillas[i][j] != null && sillas[i][j].getEtiqueta().equalsIgnoreCase(etiqueta.trim())) {
                     return sillas[i][j];
                 }

@@ -65,9 +65,6 @@ public class Cine {
         }
     }
 
-    /**
-     * Método interactivo para procesar la venta de entradas
-     */
     public void realizarVenta(Scanner teclado) {
         if (funciones == null || funciones.length == 0) {
             System.out.println("No hay funciones disponibles para la venta.");
@@ -77,7 +74,6 @@ public class Cine {
         System.out.print("Nombre del cliente: ");
         String cliente = teclado.nextLine();
 
-        // 1. Seleccionar la función
         System.out.println("\n--- Funciones disponibles ---");
         for (int i = 0; i < funciones.length; i++) {
             if (funciones[i] != null) {
@@ -97,10 +93,8 @@ public class Cine {
         Funcion funcionSeleccionada = funciones[opcionFuncion];
         Sala salaDeFuncion = funcionSeleccionada.getSala();
 
-        // 2. Mostrar disponibilidad de la sala[cite: 1]
         salaDeFuncion.mostrarSillas();
 
-        // 3. Solicitar cantidad de sillas
         System.out.print("¿Cuántas sillas desea comprar? ");
         int cantidadSillas = teclado.nextInt();
         teclado.nextLine();
@@ -110,7 +104,6 @@ public class Cine {
             return;
         }
 
-        // 4. Capturar las etiquetas de las sillas (ej. A3, B8)
         Silla[] sillasSeleccionadas = new Silla[cantidadSillas];
         for (int i = 0; i < cantidadSillas; i++) {
             System.out.print("Ingrese la etiqueta de la silla " + (i + 1) + " (ej. A3): ");
@@ -124,7 +117,6 @@ public class Cine {
             sillasSeleccionadas[i] = sillaBuscada;
         }
 
-        // 5. Instanciar la Venta y procesarla
         Venta nuevaVenta = new Venta(cliente, funcionSeleccionada, sillasSeleccionadas);
         boolean exito = nuevaVenta.realizarVenta();
 
