@@ -9,6 +9,13 @@ public class Ejercicioarraylist {
         supermercado.add("Pan");
         supermercado.add("Huevos");
 
+        System.out.println("Lista inicial: " + supermercado);
+        System.out.println("-----------------------------------");
+
+        // Intentamos verificar y eliminar cada producto
+        verificarYEliminar(supermercado, "Leche");
+        verificarYEliminar(supermercado, "Pan");
+        verificarYEliminar(supermercado, "Huevos");
     }
 
     public static void verificarYEliminar(List<String> lista, String productoBuscado) {
